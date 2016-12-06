@@ -2,10 +2,11 @@
 
 /* calculate length of a bezier curve with end points P1 and P2 and control points C1 and C2*/
 function lengthofbezier(P1,P2,C1,C2){
-P1temp=P1;
-length = 0;
-for (i=1;i<100;i++){
-t=0.01*i;
+var P1temp=P1;
+var P2temp=0.0;
+var length = 0;
+for (var i=1;i<100;i++){
+var t=0.01*i;
 P2temp=[(1-t)*(1-t)*(1-t)*P1[0] + 3*(1-t)*(1-t)*t*C1[0] + 3*(1-t)*t*t*C2[0] + t*t*t*P2[0],
         (1-t)*(1-t)*(1-t)*P1[1] + 3*(1-t)*(1-t)*t*C1[1] + 3*(1-t)*t*t*C2[1] + t*t*t*P2[1]];
 length = length+Math.sqrt((P2temp[0]-P1temp[0])*(P2temp[0]-P1temp[0])+(P2temp[1]-P1temp[1])*(P2temp[1]-P1temp[1]));
@@ -25,9 +26,9 @@ return P;
 
 /* given a set of points p and sets of control points c1 and c2 determine the string for drawing the line */
 function setstringline(p, c1, c2){
-var stringline = 
+var stringline =
 'M ' + pathpoint(p[0]);
-for (i=1; i<p.length; i++){ 
+for (i=1; i<p.length; i++){
 stringhelp=' C ' + pathpoint(c2[i-1]) + ' '  + pathpoint(c1[i]) +  ' ' + pathpoint(p[i]);
 stringline = stringline.concat(stringhelp);
 }
@@ -51,7 +52,7 @@ stringlinehelp = ' M '+pathpoint([pattern[i][0]-2,pattern[i][1]-2])+
 ' '+ pathpoint([pattern[i][0]+2,pattern[i][1]+2])+
 ' '+ pathpoint([pattern[i][0]+2,pattern[i][1]-2])+
 ' Z';
-stringline = stringline.concat(stringlinehelp);       
+stringline = stringline.concat(stringlinehelp);
 }
 return stringline;
 }
@@ -132,7 +133,7 @@ pattern3.p =pattern1.p.concat(pattern2.p.reverse().splice(0,2));
 pattern3.c1 = pattern1.c1.concat(pattern2.c2.reverse().splice(0,2));
 pattern3.c2 = pattern1.c2.concat(pattern2.c1.reverse().splice(0,2));
 return pattern3;
-} 
+}
 function findangle(a,b,c){
 helpa1 = unitvector(a,b);
 helpa2 = unitvector(c,b);
@@ -145,7 +146,7 @@ return angle;
 /*segment 2: startpoint newBez.P endpoint P2 controlpoint start newBez.C1 controlpoint end C2*/
 function dividebezier(P1,P2,C1,C2,t){
     newBez=new Object();
-    newBez.A1 = [(1-t)*P1[0]+t*C1[0],(1-t)*P1[1]+t*C1[1]]; 
+    newBez.A1 = [(1-t)*P1[0]+t*C1[0],(1-t)*P1[1]+t*C1[1]];
     newBez.A2 = [(1-t)*C2[0]+t*P2[0],(1-t)*C2[1]+t*P2[1]];
     newBez.C1 =[(1-t)*(1-t)*P1[0] + 2*(1-t)*t*C1[0] + t*t*C2[0],
         (1-t)*(1-t)*P1[1] + 2*(1-t)*t*C1[1] + t*t*C2[1]];
@@ -186,6 +187,3 @@ h = ((A1[0]-A2[0])*P[0]+(A1[1]-A2[1])*P[1])/(F[0]*P[0]+F[1]*P[1]);
 var I = [A2[0]+h*F[0],A2[1]+h*F[1]];
 return I;
 }
-
-
-
