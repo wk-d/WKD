@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="../jspdf/libs/base64.js"></script>
+<script type="text/javascript" src="../jspdf/libs/sprintf.js"></script>
+<script type="text/javascript" src="../jspdf/jspdf.js"></script>
+
+<script src="Functions.js"></script>
+<script src="Patterntext.js"></script>
+<script src="Measurements.js"></script>
+<script src="EachPattern.js"></script>
+<script src="Pants.js"></script>
+<script src="PantsFancy.js"></script>
+<script src="Bodice.js"></script>
+<script src="BodiceW.js"></script>
+<script src="ShirtW.js"></script>
+<script src="BodiceW2.js"></script>
+<script src="BodiceWPrincess.js"></script>
+<script src="BodiceWPrincess2.js"></script>
+<script src="BodiceBackWomen.js"></script>
+<script src="BodiceBackMen.js"></script>
+<script src="SleeveShirtW.js"></script>
+<script src="Sleeve.js"></script>
+<script src="Skirt.js"></script>
+      <style type="text/css" media="all">
+		@import "style.css";
+	</style>
+      <style>
+            #svgContainer {
+            }
+        </style>
+        
+
+</head>
+<body>
+<input type="button" onclick="w=window.open('HW3.html');w.ret=ret;" value="click me">
+	    <div id="svgContainer"></div>
+<script>
+stringline = pickpattern(chosenpat);
+ret=drawpattern(stringline,25.);
+/*!!replace 25 by scale!!*/
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+ItemText, ItemName,ItemValue
+"Neck Width",NeckWidth,12.2
+Chest,Chest,86
+Waist,Waist,69
+Hips,Hips,97
+"Shoulder Width",ShoulderWidth,43
+"Center Front Waist to Shoulder",CenterFrontWaisttoShoulder,48
+"Full Bust",FullBust,87
+"Upper Chest",UpperChest,80
+"Front Bust",FrontBust,50
+"Back Bust",BackBust,41
+"Bust to Bust",BusttoBust,20
+"Bust to Shoulder",BusttoShoulder,25
+"Center Front to Waist",CenterFronttoWaist,42
+"Side Front to Waist",SideFronttoWaist,46
+"Side Front to Bust",SideFronttoBust,25
+"Center Back Waist to Shoulder",CenterBackWaisttoShoulder,48
+"Center Back",CenterBack,48
+"Side Back",SideBack,51
+"Armpit to Waist",ArmpittoWaist,24.5
+Armlength,Armlength,68
+Biceps,Biceps,27
+Palm,Palm,24
+Wrist,Wrist,20
+"Sleeve Cap",SleeveCap,13
+"Waist to Hips",WaisttoHips,23
+"Waist to Knee",WaisttoKnee,61.5
+"Waist to Floor",WaisttoFloor,117.5
+Inseam,Inseam,85
+Thigh,Thigh,49

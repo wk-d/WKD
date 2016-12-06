@@ -1,0 +1,30 @@
+Text,Item,36,Description
+Neck Width,NeckWidth,13.2,Put a string around the back of your neck and hold it down the front of the body. Measure from one side of the string to the other. For women this should be between 10 and 12.5 cm and for men between 12.5 and 15 cm
+Chest,Chest,84,Around the fullest part of the chest and across shoulder blades
+Waist,Waist,68,Around the narrowest part of the waist
+Hips,Hips,94,Around fullest part of the hips
+Shoulder Width,ShoulderWidth,37.5,Shoulder point to shoulder point in back of body
+Center Front Waist to Shoulder,CenterFrontWaisttoShoulder,46.3,Center Front Waist to Shoulder Point
+Full Bust,FullBust,84,Around the fullest part of the chest and across shoulder blades
+Upper Chest,UpperChest,77.5,Very snuggly circumference of the chest above the bust
+Front Bust,FrontBust,49,Side seam to side seam at the fullest part of the bust
+Back Bust,BackBust,35,Side seam to side seam at the fullest part of the bust across shoulder blades
+Bust to Bust,BusttoBust,18.75,Apex to apex
+Bust to Shoulder,BusttoShoulder,25,Apex to shoulder point
+Center Front to Waist,CenterFronttoWaist,44.7,Neckline to waist
+Side Front to Waist,SideFronttoWaist,48.7,Neckline(side) vertically down to waistline(front)
+Side Front to Bust,SideFronttoBust,25,Neckline(side) to apex
+Center Back Waist to Shoulder,CenterBackWaisttoShoulder,45,Neckline(back) to shoulder point
+Center Back,CenterBack,41,Neckline(back) vertically down to waistline
+Side Back,SideBack,44,Neckline(side) vertically down to waistline(back)
+Armpit to Waist,ArmpittoWaist,20.75,Armpit vertically down to waistline
+Armlength,Armlength,59.6,Shoulder point to wrist over slightly bent arm
+Biceps,Biceps,26.8,Fullest part of the arm
+Palm,Palm,19.4,Circumference around largest part of the hand
+Wrist,Wrist,15.4,Circumference below the large wrist bone
+Sleeve Cap,SleeveCap,16,Shoulder point to fullest part of the arm (where biceps was measured)
+Waist to Hips,WaisttoHips,20.4,Waistline(side) to hipline(side)
+Waist to Knee,WaisttoKnee,60.5,Waistline(side) to knee
+Waist to Floor,WaisttoFloor,102,Waistline(side) to floor
+Inseam,Inseam,77.5,Crotch to floor
+Thigh,Thigh,53.8,Circumference at largest part of the leg close to crotch

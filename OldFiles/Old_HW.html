@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="EachPattern.js"></script>
+<script src="Functions.js"></script>
+<script src="Measurements.js"></script>
+</head>
+<style type="text/css" media="all">
+		@import "style.css";
+	</style>
+	<body>
+
+    <script type="text/javascript">
+    window.onload = function() {
+    var div = document.getElementById('Measures');
+    var h2 = div.getElementsByTagName('h2')[0];
+    var form = div.getElementsByTagName('form')[0];
+    h2.onclick = function() {
+    var table = form.getElementsByTagName('table')[0];
+    table.style.display = table.style.display == 'none' ? 'block' : 'none';
+    }
+    };
+    </script>
+
+
+<h1>Patternmaker</h1>
+ <div id="Pattern">
+ <h2>Pattern</h2>  
+  <form name="Pattern"> 
+<p>please pick a pattern from the drop down menu and then click ok</p> 
+<p> 
+	<label>
+		<select name = "pattern">
+			<option> Bodice Women</option>
+			<!--<option> Shirt Women</option>-->
+			<option> Pants Women</option>
+			<!--<option> Fancy Pants Women</option>-->
+			<option> Bodice Men</option>
+			<option> Pants Men</option>
+			<option> Skirt</option>
+		</select>
+	</label>
+</p>
+</form>
+</div>
+<div id = "ProceedP">  
+<input type="button" value="ok"
+onclick="x = document.Pattern.pattern.selectedIndex; chosenpat = document.Pattern.pattern.options[x].text;
+selectmeasurementstohide(chosenpat);showmeasurements();"/>
+</div> 
+<div id="Measures" style="display:none;">
+<h2 href="#">Measurements</h2>
+<p>
+please enter your measurements (in centimeters) and then click ok.
+</p><form name="Formular" >
+<table  id="Measurementtable" border="0" >
+
+ </table> 
+  </form>
+</div>
+<p> 
+<div id = "ProceedM" style = "display:none;">  
+<input type="button" value="ok" 
+  onclick="m=measurements();window.open('HW2.html','_self');" /> 
+</div>  
+</p> 
+
+</body>
+<script>
+newmeasurementtableitem('Neck Width',"NeckWidth","12.2");
+newmeasurementtableitem("Chest","Chest","86");
+newmeasurementtableitem("Waist","Waist","69");
+newmeasurementtableitem("Hips","Hips","97");
+newmeasurementtableitem("Shoulder Width","ShoulderWidth","43");
+newmeasurementtableitem("Center Front Waist to Shoulder","CenterFrontWaisttoShoulder","48");
+newmeasurementtableitem("Full Bust","FullBust", "87");
+newmeasurementtableitem("Upper Chest","UpperChest","80");
+newmeasurementtableitem("Front Bust","FrontBust","50");
+newmeasurementtableitem("Back Bust","BackBust","41");
+newmeasurementtableitem("Bust to Bust","BusttoBust","20");
+newmeasurementtableitem("Bust to Shoulder","BusttoShoulder","25");
+newmeasurementtableitem("Center Front to Waist","CenterFronttoWaist","42");
+newmeasurementtableitem("Side Front to Waist","SideFronttoWaist","46");
+newmeasurementtableitem("Side Front to Bust","SideFronttoBust","25");
+newmeasurementtableitem("Center Back Waist to Shoulder","CenterBackWaisttoShoulder","48");
+newmeasurementtableitem("Center Back","CenterBack","48");
+newmeasurementtableitem("Side Back","SideBack","51");
+newmeasurementtableitem("Armpit to Waist","ArmpittoWaist","24.5");
+newmeasurementtableitem("Armlength", "Armlength", "68");
+newmeasurementtableitem("Biceps","Biceps", "27");
+newmeasurementtableitem("Palm","Palm", "24");
+newmeasurementtableitem("Wrist", "Wrist", "20");
+newmeasurementtableitem("Sleeve Cap", "SleeveCap", "13");
+newmeasurementtableitem("Waist to Hips", "WaisttoHips", "23");
+newmeasurementtableitem("Waist to Knee", "WaisttoKnee", "61.5");
+newmeasurementtableitem("Waist to Floor", "WaisttoFloor", "117.5");
+newmeasurementtableitem("Inseam", "Inseam", "85");
+newmeasurementtableitem("Thigh", "Thigh", "49");
+function selectmeasurementstohide(chosenpat){
+switch(chosenpat)
+	{
+		case "Bodice Women":
+		displaym("Hips");
+		displaym("WaisttoHips");
+		displaym("WaisttoKnee");
+		displaym("WaisttoFloor");
+		displaym("Inseam");
+		displaym("Thigh");
+		displaym("Hips");
+		displaym("WaisttoHips");
+		displaym("WaisttoKnee");
+		displaym("WaisttoFloor");
+		   break;
+		case "Pants Men":
+		case "Pants Women":		
+		displaym("NeckWidth");
+		displaym("Chest");
+		displaym("ShoulderWidth");
+		displaym("CenterFrontWaisttoShoulder");
+		displaym("FullBust");
+		displaym("UpperChest");
+		displaym("FrontBust");
+		displaym("BackBust");
+		displaym("BusttoBust");
+		displaym("BusttoShoulder");
+		displaym("CenterFronttoWaist");
+		displaym("SideFronttoWaist");
+		displaym("SideFronttoBust");
+		displaym("CenterBackWaisttoShoulder");
+		displaym("CenterBack");
+		displaym("SideBack");
+		displaym("ArmpittoWaist");
+		displaym("Armlength");
+		displaym("Biceps");
+		displaym("Palm");
+		displaym("Wrist");
+		displaym("SleeveCap");
+   		break;
+		case "Bodice Men" :
+		displaym("FullBust");
+		displaym("UpperChest");
+		displaym("FrontBust");
+		displaym("BackBust");
+		displaym("BusttoBust");
+		displaym("BusttoShoulder");
+		displaym("SideFronttoBust");
+		displaym("Hips");
+		displaym("WaisttoHips");
+		displaym("WaisttoKnee");
+		displaym("WaisttoFloor");
+		displaym("Inseam");
+		displaym("Thigh");
+		break;
+		case "Skirt":
+		displaym("NeckWidth");
+		displaym("Chest");
+		displaym("ShoulderWidth");
+		displaym("CenterFrontWaisttoShoulder");
+		displaym("FullBust");
+		displaym("UpperChest");
+		displaym("FrontBust");
+		displaym("BackBust");
+		displaym("BusttoBust");
+		displaym("BusttoShoulder");
+		displaym("CenterFronttoWaist");
+		displaym("SideFronttoWaist");
+		displaym("SideFronttoBust");
+		displaym("CenterBackWaisttoShoulder");
+		displaym("CenterBack");
+		displaym("SideBack");
+		displaym("ArmpittoWaist");
+		displaym("Armlength");
+		displaym("Biceps");
+		displaym("Palm");
+		displaym("Wrist");
+		displaym("SleeveCap");
+		displaym("Inseam");
+		displaym("Thigh");
+		break;
+	}
+}
+function displaym(x){
+measurementitem=document.getElementById(x);
+measurementitem.setAttribute("style","display:none;");
+}
+</script>
+</html>

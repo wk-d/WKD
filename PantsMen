@@ -1,0 +1,74 @@
+function calculatepants(m){
+var pants={
+pA:{x : 0,y : 0},
+pB:{x : 0,y : +m.WaisttoFloor},
+pC:{x : 10,y :  0},
+pD:{x : -10,y : 0},
+pE:{x : .25*m.Thigh,y : +m.Inseam},
+pF:{x : -.25*m.Thigh,y : +m.Inseam}, 
+pG:{x : 0.125*m.Waist,y : +m.WaisttoFloor}, 
+pH:{x : -0.125*m.Waist,y : +m.WaisttoFloor}, 
+pI:{x : -0.125*m.Waist + 0.25*m.Hips,y : +m.WaisttoFloor - m.WaisttoHips}, 
+pJ:{x : -0.125*m.Waist,y : +m.Inseam + 5},
+pK:{x : 0,y : +m.WaisttoFloor - m.WaisttoKnee}, 
+pL:{x : 0, y : +m.WaisttoFloor - m.WaisttoKnee}
+};
+alert(pants.pL.x);
+pants.pF.x = Math.min(pants.pF.x, pants.pJ.x - 5);
+pants.pE.x = Math.max(pants.pE.x, pants.pI.x);
+return pants;
+}
+function drawpants(pants){
+//window.open('HW2.html');
+var paper = new Raphael(0, 0, 1000, 1000);
+var offset;
+offset = {x:300,y:300};
+pants.pA.x += offset.x;
+pants.pB.x += offset.x;
+pants.pC.x += offset.x;
+pants.pD.x += offset.x;
+pants.pE.x += offset.x;
+pants.pF.x += offset.x;
+pants.pG.x += offset.x;
+pants.pH.x += offset.x;
+pants.pI.x += offset.y;
+pants.pJ.x += offset.x;
+pants.pA.y += offset.y;
+pants.pB.y += offset.y;
+pants.pC.y += offset.y;
+pants.pD.y += offset.y;
+pants.pE.y += offset.y;
+pants.pF.y += offset.y;
+pants.pG.y += offset.y;
+pants.pH.y += offset.y;
+pants.pI.y += offset.y;
+pants.pJ.y += offset.y;
+pants.pErefl = controlpointpar(pants.pE,pants.pC,pants.pE,-5,-5);
+pants.pIrefl = controlpointpar(pants.pI,pants.pG,pants.pE,+5,+5);
+pants.pIrefl2 = controlpointpar(pants.pI,pants.pG,pants.pE,-5,-5);
+pants.pGrefl = controlpointpar(pants.pG,pants.pG,pants.pI,-5,-4);
+pants.pFrefl = controlpointort(pants.pF,pants.pF,pants.pD,+3,+3);
+pants.pJrefl = controlpointpar(pants.pJ,pants.pJ,pants.pH,+3,+3);
+pants.pHrefl = controlpointort(pants.pH,pants.pG,pants.pH,+5,+5);
+var stringline = 
+'"M ' + pathpoint(pants.pF) + 
+' L ' + pathpoint(pants.pD) + 
+' L ' + pathpoint(pants.pA) + 
+' L ' + pathpoint(pants.pC) + 
+' L ' + pathpoint(pants.pE) + 
+' C ' + pathpoint(pants.pErefl) + ' ' + pathpoint(pants.pIrefl2) +  ' ' + pathpoint(pants.pI) +
+' C ' + pathpoint(pants.pIrefl) + ' ' + pathpoint(pants.pGrefl) + ' ' + pathpoint(pants.pG) +
+' L ' + pathpoint(pants.pH) + 
+' L ' + pathpoint(pants.pJ) +
+' C ' + pathpoint(pants.pJrefl) + ' ' + pathpoint(pants.pFrefl) + ' ' + pathpoint(pants.pF) + 
+'"';
+var controls = paper.set(
+                            paper.path(stringline).attr({stroke: "#ccc", "stroke-dasharray": ". "}),
+                            paper.circle(pants.pF.x, pants.pF.y, 2),
+                            paper.circle(pants.pH.x, pants.pH.y, 2),
+                            paper.circle(pants.pG.x, pants.pG.y, 2),
+                            paper.circle(pants.pC.x, pants.pC.y, 2)
+                        );
+//var t = paper.text(pants.pI.x,pants.pI.y,"I").attr({fill:"red"});
+//var t = paper.text(pants.pE.x,pants.pE.y,"E").attr({fill:"red"});
+line.transform("s4")}

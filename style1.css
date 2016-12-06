@@ -1,0 +1,223 @@
+html {
+	background: url(schnittmuster3.jpg);
+	background: white;
+	background-repeat:repeat-y;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	
+}
+
+body {
+	margin: 10;
+	padding: 10;
+	font-family: Verdana, sans;
+	font-size: 14px;
+	color: #111;
+	margin: 10px 15px 10px 10px;
+}
+
+p {
+	font-family: Verdana, sans;
+	background: white;
+	font-size: 14px;
+	color: #111;
+	margin: 10px 15px 20px 10px;
+	line-height: 16px;
+}
+
+h1 {
+	font-family: Verdana, sans;
+	background: white;
+	width: 400px;
+	color: #AA99FF;
+	margin:10px 15px 20px 10px;
+}
+ 
+#footer {
+position: absolute;
+ right: 10px;
+ height: 3em;
+ margin-top: -3em;
+}
+
+img {
+padding:5px;
+}
+
+#TextBox {
+background: white;
+ position: relative;
+ left: 20px;
+ max-width: 800px;
+ border:1px solid #AA99FF;
+ border-radius:10px;
+ margin: 5px 5px 5px 5px;
+ }
+
+#WhatsThis {
+background: white;
+ position: absolute;
+ right: 100px;
+ top: 60px;
+ width: 200px;
+ border:1px solid #AA99FF;
+ border-radius:10px;
+ margin: 5px 5px 5px 5px;
+ 
+ }
+
+#Pattern {
+ background: white;
+ position: absolute;
+ 	font-size: 14px;
+ left: 20px;
+ top: 70px;
+ width: 200px;
+ /*height: 250px;*/
+ border:1px solid #AA99FF;
+ border-radius:10px;
+ margin: 5px 5px 5px 5px;
+ }
+
+#ProceedP {
+ position: absolute;
+ 	font-size: 14px;
+ top: 202px;
+ left: 180px;
+/* margin: 5px 5px 5px 5px;*/
+ }
+
+#StandardSizes {
+ background: white;
+ position: absolute;
+ left: 720px;
+ top: 70px;
+ width: 200px;
+ border:1px solid #AA99FF;
+ border-radius:10px;
+ margin: 5px 5px 5px 5px;
+ }
+
+#ProceedS {
+ position: absolute;
+ 	font-size: 14px;
+ 
+ top: 202px;
+ left: 890px;
+ }
+
+
+#Measures {
+ background: white;
+ position: absolute;
+ top: 70px;
+ left: 310px;
+width: 335px;
+ border:1px solid #AA99FF;
+ border-radius:10px;
+ margin: 5px 5px 5px 5px;
+ }
+
+
+#ProceedM {
+	font-size: 14px;
+ position: absolute;
+ top: 202px;
+ left: 600px;
+ margin: 5px 5px 5px 5px;
+ }
+
+#svgContainer2,#svgContainer {
+position: relative;
+background: white;
+border:1px solid white;
+border-radius:10px;
+margin: 15px 15px 15px 15px;
+} 
+h2 {
+ margin: 15px 15px 15px 15px;
+ }
+
+table {
+position: relative;
+	font-size: 14px;
+
+left: 20px;}
+button {
+	font-size: 14px;
+text-align:center;
+vertical-align:middle;
+border: 1px solid #AA99FF;
+border-collapse: collapse;
+border-radius:10px;
+background-color: white;
+width:37px;
+    height:26px;}
+
+#MeasurementSize {
+text-align:center;
+	font-size: 14px;
+
+vertical-align:middle;
+border: 1px solid #AA99FF;
+border-collapse: collapse;
+border-radius:10px;
+background-color: white;
+width:40px;
+    height:26px;}
+
+input {
+
+text-align:center;
+vertical-align:middle;
+border: 1px solid #AA99FF;
+border-collapse: collapse;
+border-radius:10px;
+background-color: white;
+
+    height:26px;}
+
+select {
+	font-size: 14px;
+   padding:3px;
+    margin: 0;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    background: white;
+    color:#888;
+    border:1px solid #AA99FF;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+}
+
+
+label {position:relative}
+label:after {
+    content:'';
+    right:8px; top:0px;
+    padding:0 0 5px;
+    background: white;
+    border-bottom:none;
+    position:absolute;
+    pointer-events:none;
+}
+label:before {
+    content:'';
+    right:-17px; top:0px;
+    width:17px; height:20px;
+    background:white;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}​
+
+
+
+
+

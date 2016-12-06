@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="../jspdf/libs/base64.js"></script>
+<script type="text/javascript" src="../jspdf/libs/sprintf.js"></script>
+<script type="text/javascript" src="../jspdf/jspdf.js"></script>
+<script src="jquery-1.10.2.js"></script>
+
+
+
+<script src="Functions.js"></script>
+<script src="Patterntext.js"></script>
+<script src="Measurements.js"></script>
+<script src="EachPattern.js"></script>
+<script src="Pants.js"></script>
+<script src="PantsFancy.js"></script>
+<script src="Bodice.js"></script>
+<script src="BodiceW.js"></script>
+<script src="ShirtW.js"></script>
+<script src="BodiceW2.js"></script>
+<script src="BodiceWPrincess.js"></script>
+<script src="BodiceWPrincess2.js"></script>
+<script src="BodiceBackWomen.js"></script>
+<script src="BodiceBackMen.js"></script>
+<script src="SleeveShirtW.js"></script>
+<script src="Sleeve.js"></script>
+<script src="Skirt.js"></script>
+<script src="Skirt1F.js"></script>
+<script src="Skirt1B.js"></script>
+      <style type="text/css" media="all">
+		@import "style.css";
+	</style>
+      <style>
+            #svgContainer {
+            }
+        </style>
+        
+
+</head>
+<body>
+<h1>My Pattern</h1>
+<div id="TextBox">
+<p>These will be your pattern pieces.<p/>
+<p>To save and print them (on A4 or US letter), please click 'Print my pattern' and print the resulting pages.<p/>
+<p>When you print the pages, please make sure that the scale factor is 100%: The outer dashed borders on the printed pages should measure 15.5 x 22.5 cm.</p>
+<input type="submit" onclick="sessionStorage.setItem('m', JSON.stringify(m));window.open('Print.php','_self');" value="Print my pattern"></input>
+</div>
+<div id="svgContainer"></div>
+	
+<script>
+
+function loadXMLDoc(x)
+{
+var ajax = new XMLHttpRequest();
+	ajax.open("POST",'testSave.php',false);
+	ajax.setRequestHeader('Content-Type', 'application/upload');	    
+        ajax.send(x); 
+}
+/* scale is conversion between pixels and cms, check if this works when printing) */
+/* here the scale is divided by four for a preview of your pattern */
+scale = 96./2.54/4;
+var m = sessionStorage.getItem('m');
+m= JSON.parse(m);
+chosenpat=sessionStorage.chosenpat;
+stringline = pickpattern(chosenpat,scale);
+sessionStorage.stringline=stringline;
+sessionStorage.scale=scale;
+sessionStorage.chosenpat = chosenpat;
+
+ret=drawpattern(stringline,scale);
+mySvg=ret.mySvg;
+geodim=ret.geodim;
+document.getElementById("text2");
+/*c.setAttribute("value","mytext"); fehler drin*/
+</script>
+
+</body>
+</html>

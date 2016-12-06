@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src="EachPattern.js"></script>
+<script src="Functions.js"></script>
+<script src="Measurements.js"></script>
+</head>
+<style type="text/css" media="all">
+		@import "style.css";
+	</style>
+	<body>
+
+    <script type="text/javascript">
+    window.onload = function() {
+    var div = document.getElementById('Measures');
+    var h2 = div.getElementsByTagName('h2')[0];
+    var form = div.getElementsByTagName('form')[0];
+    h2.onclick = function() {
+    var table = form.getElementsByTagName('table')[0];
+    table.style.display = table.style.display == 'none' ? 'block' : 'none';
+    }
+    };
+    </script>
+
+
+<h1>h&uumlbscheLadys Patterns</h1>
+
+<div id="WhatsThis">
+ <h2>What is this?</h2>  
+  <p>it's a tool to create sewing patterns in your size to print out.</p> 
+ <h2>What do I need to make patterns?</h2>  
+  <p>you need a webbrowser, a printer, some scissors and glue.</p> 
+ <h2>What kind of patterns can I print?</h2>  
+  <p>you can print basic patterns for tops, pants and skirts. These basic patterns are the first step, when designing clothing. Once you have printed out the basic pattern, you can use them to construct all kinds of clothing that you want to sew, by changing necklines, hemlines, adding seams and adding allowances for a looser fit and seam allowances.</p> 
+</div>
+
+ <div id="Pattern">
+ <h2>Pattern</h2>  
+  <form name="Pattern"> 
+<p>please pick a pattern from the drop down menu and then click ok</p> 
+<p> 
+	<label>
+		<select name = "pattern">
+			<option> Bodice Women</option>
+			<!--<option> Shirt Women</option>-->
+			<option> Pants Women</option>
+			<!--<option> Fancy Pants Women</option>-->
+			<option> Bodice Men</option>
+			<option> Pants Men</option>
+			<option> Skirt</option>
+		</select>
+	</label>
+</p>
+</form>
+</div>
+<div id = "ProceedP">  
+<button
+onclick="x = document.Pattern.pattern.selectedIndex; chosenpat = document.Pattern.pattern.options[x].text;
+selectmeasurementstoshow(chosenpat);showmeasurements();">ok</button>
+</div> 
+<div id="Measures" style="display:none;">
+<h2 href="#">Measurements</h2>
+<p>
+please enter your measurements (in centimeters) and then click ok. When you point the mouse at a measurementp, a description will appear.
+</p><form name="Formular" >
+<table  id="Measurementtable" border="0" >
+
+ </table> 
+  </form>
+</div>
+<p> 
+<div id = "ProceedM" style = "display:none;">  
+<button onclick="m=measurements();sessionStorage.setItem('m', JSON.stringify(m));sessionStorage.chosenpat=chosenpat;window.open('Pattern.html','_self')">ok</button> 
+</div>  
+</p> 
+<div id="footer">
+<a href="Impressum.html">Impressum</a> 
+</div>
+</body>
+<script>
+
+
+newmeasurementtableitem('Neck Width',"NeckWidth","12.2","Put a string around the neck and hold it down the front of the body.Measure from one side of the string to the other. For women this should be between 10 and 12.5 cm and for men between 12.5 and 15 cm");
+newmeasurementtableitem("Chest","Chest","86","Around the fullest part of the chest and across shoulder blades");
+newmeasurementtableitem("Waist","Waist","69","Around the narrowest part of the waist");
+newmeasurementtableitem("Hips","Hips","97","Around fullest part of the hips");
+newmeasurementtableitem("Shoulder Width","ShoulderWidth","43","Shoulder point to shoulder point in back of body");
+newmeasurementtableitem("Center Front Waist to Shoulder","CenterFrontWaisttoShoulder","48","Center Front Waist to Shoulder Point");
+newmeasurementtableitem("Full Bust","FullBust", "87","Around the fullest part of the chest and across shoulder blades");
+newmeasurementtableitem("Upper Chest","UpperChest","80","Very snuggly circumference of the chest above the bust");
+newmeasurementtableitem("Front Bust","FrontBust","50","Side seam to side seam at the fullest part of the bust");
+newmeasurementtableitem("Back Bust","BackBust","41","Side seam to side seam at the fullest part of the bust across shoulder blades");
+newmeasurementtableitem("Bust to Bust","BusttoBust","20","Apex to apex");
+newmeasurementtableitem("Bust to Shoulder","BusttoShoulder","25","Apex to shoulder point");
+newmeasurementtableitem("Center Front to Waist","CenterFronttoWaist","42","Neckline to waist");
+newmeasurementtableitem("Side Front to Waist","SideFronttoWaist","46","Neckline(side) vertically down to waistline(front)");
+newmeasurementtableitem("Side Front to Bust","SideFronttoBust","25","Neckline(side) to apex");
+newmeasurementtableitem("Center Back Waist to Shoulder","CenterBackWaisttoShoulder","48","Neckline(back) to shoulder point");
+newmeasurementtableitem("Center Back","CenterBack","48","Neckline(back) vertically down to waistline");
+newmeasurementtableitem("Side Back","SideBack","51","Neckline(side) vertically down to waistline(back)");
+newmeasurementtableitem("Armpit to Waist","ArmpittoWaist","24.5","Armpit vertically down to waistline");
+newmeasurementtableitem("Armlength", "Armlength", "68","Shoulder point to wrist over slightly bent arm");
+newmeasurementtableitem("Biceps","Biceps", "27","Fullest part of the arm");
+newmeasurementtableitem("Palm","Palm", "24","Circumference around largest part of the hand");
+newmeasurementtableitem("Wrist", "Wrist", "20","Circumference below the large wrist bone");
+newmeasurementtableitem("Sleeve Cap", "SleeveCap", "13","Shoulder point to fullest part of the arm (where biceps was measured)");
+newmeasurementtableitem("Waist to Hips", "WaisttoHips", "23","Waistline(side) to hipline(side)");
+newmeasurementtableitem("Waist to Knee", "WaisttoKnee", "61.5","Waistline(side) to knee");
+newmeasurementtableitem("Waist to Floor", "WaisttoFloor", "117.5","Waistline(side) to floor");
+newmeasurementtableitem("Inseam", "Inseam", "85","Crotch to floor");
+newmeasurementtableitem("Thigh", "Thigh", "49","Circumference at largest part of the leg close to crotch");
+
+
+function selectmeasurementstoshow(chosenpat){
+switch(chosenpat)
+	{
+		case "Bodice Women":
+		
+		var x=["NeckWidth","ShoulderWidth","CenterFrontWaisttoShoulder","FullBust","UpperChest","FrontBust",
+		"BackBust","BusttoBust","BusttoShoulder","CenterFronttoWaist","SideFronttoWaist","SideFronttoBust",
+		"CenterBackWaisttoShoulder","CenterBack","SideBack","ArmpittoWaist","Armlength","Biceps","Palm","Wrist",
+		"SleeveCap","Waist"];
+		x.map(displaym);
+		  break;
+		case "Pants Men":
+		case "Pants Women":		
+		var x=["Waist","Hips","WaisttoHips","WaisttoKnee","WaisttoFloor","Inseam","Thigh"];
+   		x.map(displaym);
+		break;
+		case "Bodice Men" :
+		var x=["NeckWidth","Chest","ShoulderWidth","CenterFrontWaisttoShoulder","CenterFronttoWaist","SideFronttoWaist",
+		"CenterBackWaisttoShoulder","CenterBack","SideBack","ArmpittoWaist","Armlength","Biceps","Palm","Wrist",
+		"SleeveCap","Waist"];
+		x.map(displaym);displaym("FullBust");
+		break;
+		case "Skirt":
+		var x=["Waist","Hips","WaisttoHips","WaisttoKnee"];
+   		x.map(displaym);
+		break;
+	}
+}
+
+</script>
+</html>
