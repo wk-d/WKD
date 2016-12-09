@@ -1,8 +1,6 @@
 var chosenpat;
 var sizefile;
 
-document.getElementById("patterntable").addEventListener("change", choospattern);
-
 function choosepattern(){
   var x = document.getElementById('patterntable').selectedIndex;
   chosenpat = document.getElementById('patterntable').options[x].text;
