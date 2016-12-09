@@ -4,11 +4,16 @@ var sizefile;
 function choosepattern(){
   var x = document.getElementById('patterntable').selectedIndex;
   chosenpat = document.getElementById('patterntable').options[x].text;
+  var descri = document.getElementById('patterntable').options[x].value;
   selectmeasurementstoshow(chosenpat,sizefile);
   showmeasurements();
   changeBild(chosenpat);
+  changeText(chosenpat,descri);
 }
 
+function changeText(chosenpat,descri){
+  document.getElementById("Text").innerHTML=descri;
+}
 function changeBild(chosenpat){
 switch (chosenpat){
 case "Bodice Women":
@@ -40,7 +45,7 @@ document.getElementById("Bild").src=document.Pattern.pattern.options[x].value;
 /*load patterns from a file*/
 function loadpatterns(file){
 $(document).ready(function(){
-    $.get(file,function(data){processData(data);
+    $.get(file,function(data){processPatterns(data);
     },"text");
 });}
 
@@ -60,8 +65,9 @@ function newpatterntableitem(pattern, description){
     newpattern creates an entry in the pattern table in PickPattern
     newpatterntableitem('name to be displayed', "description");
     */
-    var patterntable=document.getElementById("pattern")
+    var patterntable=document.getElementById("patterntable")
     newitem = document.createElement("option");
     newitem.innerHTML=pattern;
+    newitem.value=description;
     patterntable.appendChild(newitem);
     };
