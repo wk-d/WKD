@@ -37,6 +37,24 @@ break;
 case "Skirt":
 document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/09/Skirt.png";
 break;
+case "Bodice Women 2":
+document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/12/BodiceW2.png";
+break;
+case "Bodice Women 1A":
+document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/12/BodiceW1A.png";
+break;
+case "Bodice Women 1B":
+document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/12/BodiceW1B-1.png";
+break;
+case "Bodice Women 2C":
+document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/12/BodiceW1B.png";
+break;
+case "Bodice Women 2D":
+document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/12/BodiceW2D.png";
+break;
+case "Bodice Women 3E":
+document.getElementById("Bild").src="http://wendykressdesign.com/wp/wp-content/uploads/2016/12/BodiceW3E.png";
+break;
 
 default:
 document.getElementById("Bild").src=document.Pattern.pattern.options[x].value;
