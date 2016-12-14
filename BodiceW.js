@@ -27,15 +27,15 @@ function calculatebodicefrontwomen(m){
   /*Dart Beginning*/  [0.5*m.BusttoBust+Math.sin(DartAngle)*(m.SideFronttoWaist - m.SideFronttoBust),
   (1-Math.cos(DartAngle))*(m.SideFronttoWaist - m.SideFronttoBust)],
   /*Dartpoint*/  [0.5*m.BusttoBust, m.SideFronttoWaist - m.SideFronttoBust -2.5+0.5*(DartWidth-2.5)],
-  
+
   [0.5*m.BusttoBust+Math.sin(DartAngle)*(m.SideFronttoWaist - m.SideFronttoBust)+
   0.5*Math.cos(DartAngle)*DartPoint3,
   (1-Math.cos(DartAngle))*(m.SideFronttoWaist - m.SideFronttoBust)+
-  0.5*Math.sin(DartAngle)*DartPoint3],  
+  0.5*Math.sin(DartAngle)*DartPoint3],
   /*Dartpoint*/  [0.5*m.BusttoBust, m.SideFronttoWaist - m.SideFronttoBust -2.5+0.5*(DartWidth-2.5)],
-  [0.5*m.BusttoBust-0.5*DartPoint3,0], 
+  [0.5*m.BusttoBust-0.5*DartPoint3,0],
   /*Dartpoint*/  [0.5*m.BusttoBust, m.SideFronttoWaist - m.SideFronttoBust -2.5+0.5*(DartWidth-2.5)],
-  /*Dartend*/  [0.5*m.BusttoBust,0] 
+  /*Dartend*/  [0.5*m.BusttoBust,0]
   ];
 
   return bodice;
@@ -54,7 +54,7 @@ c1[3] = controlpointpar(bodice[3],bodice[3],bodice[2],0*scale,0*scale);/*line*/
 c2[3] = controlpointort(bodice[3],bodice[3],bodice[2],-1*scale,-1*scale);
 c1[4] = controlpointpar(bodice[4],bodice[3],bodice[5],3*scale,3*scale);
 c2[4] = controlpointpar(bodice[4],bodice[3],bodice[5],-3*scale,-3*scale);
-c1[5] = controlpointort(bodice[5],bodice[6],bodice[5],-3*scale,3*scale); 
+c1[5] = controlpointort(bodice[5],bodice[6],bodice[5],-3*scale,3*scale);
 c2[5] = controlpointpar(bodice[5],bodice[5],bodice[6],0*scale,0*scale);
 c1[6] = controlpointpar(bodice[6],bodice[6],bodice[5],0*scale,0*scale);
 c2[6] = controlpointpar(bodice[6],bodice[6],bodice[7],0*scale,0*scale);
@@ -84,16 +84,47 @@ textline =textlinegen(helptext,'Bodice Front');
 i=3
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'B')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
  i=5;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'A')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 return stringline;
+}
+
+
+function calculatebodicebackwomen(m){
+  var DartPoint3 = 0.25*m.FullBust+2.5 - 0.25*m.Waist;
+  var DartE = 0.36*DartPoint3;
+  var DartD = 0.70*DartPoint3;
+  /*SideNeckline*/
+
+  var pA = [0.5*m.NeckWidth, m.SideBack];
+  /*ShoulderPoint*/
+  var pB = [0.5*m.ShoulderWidth,
+  Math.sqrt(m.CenterBackWaisttoShoulder*m.CenterBackWaisttoShoulder
+  - 0.25*m.ShoulderWidth*m.ShoulderWidth)];
+  var pX = [pA[0]-6*unitvector(pA,pB)[0],pA[1]-6*unitvector(pA,pB)[1]];
+  var pY = [pA[0]-7*unitvector(pA,pB)[0],pA[1]-7*unitvector(pA,pB)[1]];
+  var pZ = [pX[0]-1.5,m.CenterBack-8];
+  var pW = [m.BackBust/4+5,m.ArmpittoWaist+(-pZ[1]-m.ArmpittoWaist)/2];
+      var bodice=[
+  [0,0],
+  [0,+m.CenterBack],
+  pA,
+  pX,
+  pZ,
+  pY,
+  pB,
+  [0.5*m.BackBust + 2.5,Math.sqrt(m.ArmpittoWaist*m.ArmpittoWaist -
+     (0.5*m.BackBust+2.5-(0.25*m.Waist+2.5*1.5))*(0.5*m.BackBust+2.5-(0.25*m.Waist+2.5*1.5)))],
+  [0.25*m.BackBust + 2.5,0]
+  ];
+  return bodice;
 }

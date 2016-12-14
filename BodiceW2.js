@@ -11,9 +11,8 @@ function calculatebodicefrontwomen2(m){
   var DartA=0.28*DartPoint3;
   var DartB=0.30*DartPoint3;
   /*Armpit*/
-  var pF = [0.5*m.FrontBust+2.5,
-  Math.sqrt(m.ArmpittoWaist*m.ArmpittoWaist-0*(0.5*m.FrontBust+2.5-0.25*m.Waist)*(0.5*m.FrontBust+2.5-0.25*m.Waist))];  
-  /*SideNeckline*/  
+  var pF = [0.5*m.FrontBust+2.5,m.ArmpittoWaist];
+  /*SideNeckline*/
   var pSNL =  [0.5*m.NeckWidth, m.SideFronttoWaist];
   /*Inside Armhole*/
   var pF1 = [0.5*m.ShoulderWidth-2.5,
@@ -38,7 +37,7 @@ function calculatebodicefrontwomen2(m){
   newBez = dividebezier(pFt,pF,help4,help5,0.6);
   pF2 = newBez.P;
   var pF3 = rotateAaroundB(pF2,pH,-DartAngle);
- var pDP = [pH[0]-2.5*unitvector(pH,pF1)[0],pH[1]-2.5*unitvector(pH,pF1)[1]]; 
+ var pDP = [pH[0]-2.5*unitvector(pH,pF1)[0],pH[1]-2.5*unitvector(pH,pF1)[1]];
   var pD2 = [pF3[0]-1.5*unitvector(pF3,pDP)[0],pF3[1]-1.5*unitvector(pF3,pDP)[1]]; ;
   var bodice = new Array();
   bodice=[
@@ -57,7 +56,7 @@ function calculatebodicefrontwomen2(m){
     /*Dartposition Waist*/pJ2,
     /*Dartpoint*/       [0.5*m.BusttoBust, m.SideFronttoWaist - m.SideFronttoBust -3],
     /*DartPositionWaist2*/[0.5*m.BusttoBust-0.5*DartA,0],
-        
+
   [0,0],
   [0,-m.WaisttoHips],
   [0.5*m.FrontBust + 2.5,-m.WaisttoHips],
@@ -81,7 +80,7 @@ c1[2] = controlpointort(bodice[2],bodice[3],bodice[2],-2*scale,-2*scale);
 /*armhole*/
 c2[3] = controlpointort(bodice[3],bodice[2],bodice[3],10*scale,10*scale);
 c1[4] = controlpointpar(bodice[4],bodice[4],bodice[6],0.5*scale,0.5*scale);
-/*armhole*/  
+/*armhole*/
 c2[6] = controlpointpar(bodice[6],bodice[6],bodice[4],0.5*scale,0.5*scale);
 c1[7] = controlpointort(bodice[7],bodice[8],bodice[7],-4*scale,4*scale);
   helptext = [bodice[5][0]/2-10,(bodice[1][1]-bodice[0][1])/2];
@@ -96,17 +95,17 @@ textline =textlinegen(helptext,'Bodice Front');
 i=3;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'B')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
  i=7;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'A')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 return stringline;
 }
 
@@ -118,7 +117,7 @@ function calculatebodicebackwomen2(m){
   var DartE = 0.36*DartPoint3;
   var DartD = 0.70*DartPoint3;
   /*SideNeckline*/
-  
+
   var pA = [0.5*m.NeckWidth, m.SideBack];
   /*ShoulderPoint*/
   var pB = [0.5*m.ShoulderWidth,
@@ -134,20 +133,20 @@ function calculatebodicebackwomen2(m){
   pA,
   pX,
   pZ,
-  pY,      
+  pY,
   pB,
   [0.5*m.BackBust + 2.5,Math.sqrt(m.ArmpittoWaist*m.ArmpittoWaist -
      (0.5*m.BackBust+2.5-(0.25*m.Waist+2.5*1.5))*(0.5*m.BackBust+2.5-(0.25*m.Waist+2.5*1.5)))],
   [0.5*m.BackBust + 2.5, 0],
-        
+
   [pW[0] + 0.5*DartD, 0],
   [pW[0], m.ArmpittoWaist],
-  [pW[0] -0.5*DartD,0],      
- 
+  [pW[0] -0.5*DartD,0],
+
   [pZ[0]-1.+ 0.5*DartE, 0],
   [pZ[0]-1, m.ArmpittoWaist],
   [pZ[0]-1-0.5*DartE,0],
-        
+
   [0,0],
   [0,-m.WaisttoHips],
   [0.5*m.BackBust + 2.5,-m.WaisttoHips],
@@ -175,23 +174,23 @@ tpmi = helpvar[0];
 tpma = helpvar[1];
 helptext = [tpmi[0]+105,(tpma[1]+tpmi[1])/2];
 textline =textlinegen(helptext,'Bodice Back');
-stringline = stringline.concat(textline);   
+stringline = stringline.concat(textline);
 
 
 i=6;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'B')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
  i=7;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'C')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 return stringline;
 }
 
@@ -318,7 +317,7 @@ function calculatebodicefrontwomen3e2(m){
   bodice1[1]=[bodice[5][0],bodice[5][1]];
   help1=[bodice[2][0]+0.5*(bodice[3][0]-bodice[2][0]),bodice[2][1]+0.5*(bodice[3][1]-bodice[2][1])]
   bodice1[2]=rotateAaroundB(help1,bodice1[1],-DartAngle);
-  bodice1[3]=rotateAaroundB(bodice[3],bodice1[1],-DartAngle); 
+  bodice1[3]=rotateAaroundB(bodice[3],bodice1[1],-DartAngle);
   /*bodice1[4]=rotateAaroundB(bodice[4],bodice1[1],-DartAngle);*/
   bodice1[4]=bodice[7];
   bodice1[5]=bodice[8];
@@ -354,17 +353,17 @@ textline =textlinegen(helptext,'Bodice Front');
 i=3;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'B')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
  i=7;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'A')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 return stringline;
 }
 
@@ -382,7 +381,7 @@ c2[1] = controlpointpar(bodice[1],bodice[0],bodice[1],0*scale,0*scale);
 /*armhole*/
 c2[3] = controlpointort(bodice[3],bodice[2],bodice[3],10*scale,10*scale);
 /*c1[4] = controlpointort(bodice[4],bodice[3],bodice[4],0*scale,-0*scale);
-/*armhole*/  
+/*armhole*/
 /*c2[4] = controlpointort(bodice[4],bodice[3],bodice[4],0*scale,0*scale);
 c1[5] = controlpointort(bodice[5],bodice[6],bodice[5],-3*scale,3*scale);*/
 c1[4] = controlpointort(bodice[4],bodice[5],bodice[4],-7*scale,7*scale);
@@ -398,18 +397,16 @@ textline =textlinegen(helptext,'Bodice Front');
 i=3;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'B')
-stringline = stringline.concat(textline);       
+stringline = stringline.concat(textline);
  i=7;
 helptext = [bodice[i][0]-2,bodice[i][1]+2];
 textline = textlinegen(helptext,'TriangleSouth')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 helptext = [bodice[i][0]-13,  bodice[i][1]+30];
 textline = textlinegen(helptext,'A')
-stringline = stringline.concat(textline);        
+stringline = stringline.concat(textline);
 return stringline;
 }
-
-
